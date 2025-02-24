@@ -1,1 +1,2 @@
-# vut-ssy
+# MPC-SSY (Bezdrátové a senzorové sítě)
+
