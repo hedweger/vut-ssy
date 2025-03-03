@@ -30,11 +30,3 @@ uint8_t UART_GetChar(void) {
     ;
   return UDR1;
 }
-
-ISR(USART1_RX_vect) {
-  uint8_t recv;
-  recv = UART_GetChar();
-  if (recv == 1) {
-    UART_SendChar('1');
-  }
-}
