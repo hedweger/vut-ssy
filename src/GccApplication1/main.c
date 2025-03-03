@@ -9,7 +9,6 @@ int main(void) {
   LED1OFF;
   LED2OFF;
   LED3OFF;
-  int j = 0;
   UART_Init(BAUD);
   UART_SendString("MENU:");
   UART_SendString("1: abeceda");
