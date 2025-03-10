@@ -1,9 +1,11 @@
 #define BAUD 38400
 
 #include "makra.h"
-#include "uart/uart.h"
-#include "uart/timer.h"
-#include<stdbool.h>
+#include "libs/uart.h"
+#include "libs/timer.h"
+#include "libs/at30.h"
+#include <stdbool.h>
+#include <stdio.h>
 
 uint8_t duty = 10;
 
@@ -11,9 +13,18 @@ int main(void) {
 	bool timer0 = false;
 	bool timer1 = false;
 	bool timer2 = false;
+	uint8_t res;
+	uint16_t light; 
+	float temp;
+	char out_str[30];
+	UART_Init(BAUD);
+	cbi(DDRE, PORTE5); 
+	sbi(EICRB, ISC51);
+	cbi(EICRB, ISC50);
+	sbi(EIMSK, INT5);
+	sei(); 
 	DDRB |= (1 << DDB4) | (1 << DDB5) | (1 << DDB6);
 	DDRE |= (1 << DDE3);
-	UART_Init(BAUD);
 	
 	UART_SendString("MENU:\r\n");
 	UART_SendString("1: abeceda\r\n");
@@ -27,6 +38,10 @@ int main(void) {
 	
 	while (1) {	
 		char recv = UART_GetChar();
+		UART_SendString("Your input is: ");
+		UART_SendChar(recv);
+		UART_SendChar('\r');
+		UART_SendChar('\n');
 		switch (recv)
 		{
 		case '1':
@@ -34,6 +49,20 @@ int main(void) {
 			break;
 		case '2':
 			UART_SendString("ABCDEFGHIJKLMNOPQRSTUVWXYZ\r\n");
+			break;
+		case '4':
+			ADC_init(0x04,0x02);
+			light = ADC_get(3);
+			sprintf(out_str, "light intensity is: %d\r\n", light);
+			UART_SendString(out_str);
+			break;
+		case 't':
+			i2c_init();
+			//res = at30_set_precision();
+			temp = at30_read_temp();
+			sprintf(out_str, "%f\r\n", temp);
+			UART_SendString("Temperature is: ");
+			UART_SendString(out_str);
 			break;
 		case '5':
 			if (timer1 == false) {
@@ -45,7 +74,7 @@ int main(void) {
 			}
 			break;
 		case '+':
-		if (duty > 10) {
+			if (duty > 10) {
 				duty -= 10; 
 			}
 			Timer2_fastpwm_start(duty);
@@ -57,7 +86,7 @@ int main(void) {
 			Timer2_fastpwm_start(duty);
 			break;
 		default:
-			UART_SendString(strcat(recv, " unknown sequence\r\n"));
+			UART_SendString("unknown sequence\r\n");
 			break;
 		}
 	}

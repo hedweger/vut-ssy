@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include "../makra.h"
 
-#define PRESCALE 5
+#define PRESCALE 8
 #define PRESCALE_VALUE 1024
 #define FREQ 2
 
@@ -69,8 +69,7 @@ void Timer2_fastpwm_start(uint8_t duty) {
 	uint8_t div = (255*duty)/100;
 	OCR2A = div;
 	
-	TCCR2A |= (1 << WGM21);
-	TCCR2A |= (1 << WGM20);
+	TCCR2A |= (1 << WGM21) | (1 << WGM20);
 	
 	TCCR2B |= PRESCALE;
 	
@@ -81,8 +80,4 @@ void Timer2_fastpwm_start(uint8_t duty) {
 
 ISR(TIMER1_COMPA_vect) {
 	LED1CHANGE;
-}
-
-ISR(TIMER2_COMPA_vect) {
-	// LED3CHANGE;
 }
