@@ -621,8 +621,8 @@ int main(void) {
 			break;
      4cc:	70 e0       	ldi	r23, 0x00	; 0
 		case '4':
-			ADC_init(0x05,0x02);
-     4ce:	85 e0       	ldi	r24, 0x05	; 5
+			ADC_init(0x04,0x02);
+     4ce:	84 e0       	ldi	r24, 0x04	; 4
      4d0:	90 e0       	ldi	r25, 0x00	; 0
      4d2:	ca de       	rcall	.-620    	; 0x268 <ADC_init>
      4d4:	83 e0       	ldi	r24, 0x03	; 3
