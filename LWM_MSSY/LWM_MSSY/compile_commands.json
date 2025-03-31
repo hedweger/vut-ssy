@@ -1,0 +1,10 @@
+[
+  {
+    "directory": "/Users/you/your-avr-project",
+    "file": "main.c",
+    "command": "clang --target=avr -DF_CPU=16000000UL -D__AVR_ATmega256RFR2__ 
+    -I/opt/homebrew/opt/avr-gcc@11/avr/include
+    -std=gnu11 -Wall -Wextra -fsyntax-only main.c"
+  }
+]
+
