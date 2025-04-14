@@ -1,7 +1,7 @@
 /**
- * \file nwk.h
+ * \file config.h
  *
- * \brief Network layer public interface
+ * \brief Peer2Peer application and stack configuration
  *
  * Copyright (C) 2012-2014, Atmel Corporation. All rights reserved.
  *
@@ -40,72 +40,47 @@
  * Modification and other use of this code is subject to Atmel's Limited
  * License Agreement (license.txt).
  *
- * $Id: nwk.h 9267 2014-03-18 21:46:19Z ataradov $
+ * $Id: config.h 9267 2014-03-18 21:46:19Z ataradov $
  *
  */
 
-#ifndef _NWK_H_
-#define _NWK_H_
-
-/*- Includes ---------------------------------------------------------------*/
-#include <stdint.h>
-#include <stdbool.h>
-#include "sysConfig.h"
-#include "nwkRoute.h"
-#include "nwkGroup.h"
-#include "nwkSecurity.h"
-#include "nwkDataReq.h"
+#ifndef _CONFIG_H_
+#define _CONFIG_H_
 
 /*- Definitions ------------------------------------------------------------*/
-#define NWK_MAX_PAYLOAD_SIZE            (127 - 16/*NwkFrameHeader_t*/ - 2/*crc*/)
 
-#define NWK_BROADCAST_PANID             0xffff
-#define NWK_BROADCAST_ADDR              0xffff
+#define UART_SPEED 115200
+#define DESIGNATION 0  // 0 -> server, 1 -> client
 
-#define NWK_ENDPOINTS_AMOUNT            16
+// Address must be set to 0 for the first device, and to 1 for the second one.
+#define APP_ADDR 00
+#define APP_PANID 0x80
+#define APP_ENDPOINT 1
+// #define APP_SECURITY_KEY          "mssy2017"
+#define APP_FLUSH_TIMER_INTERVAL 20
 
-/*- Types ------------------------------------------------------------------*/
-typedef enum
-{
-  NWK_SUCCESS_STATUS                      = 0x00,
-  NWK_ERROR_STATUS                        = 0x01,
-  NWK_OUT_OF_MEMORY_STATUS                = 0x02,
-
-  NWK_NO_ACK_STATUS                       = 0x10,
-  NWK_NO_ROUTE_STATUS                     = 0x11,
-
-  NWK_PHY_CHANNEL_ACCESS_FAILURE_STATUS   = 0x20,
-  NWK_PHY_NO_ACK_STATUS                   = 0x21,
-} NWK_Status_t;
-
-typedef struct NwkIb_t
-{
-  uint16_t     addr;
-  uint16_t     panId;
-  uint8_t      nwkSeqNum;
-  uint8_t      macSeqNum;
-  bool         (*endpoint[NWK_ENDPOINTS_AMOUNT])(NWK_DataInd_t *ind);
-#ifdef NWK_ENABLE_SECURITY
-  uint32_t     key[4];
+#ifdef PHY_AT86RF212
+#define APP_CHANNEL 0x01
+#define APP_BAND 0x00
+#define APP_MODULATION 0x24
+#else
+#define APP_CHANNEL 0x0f
 #endif
-  uint16_t     lock;
-} NwkIb_t;
 
-/*- Variables --------------------------------------------------------------*/
-extern NwkIb_t nwkIb;
+#define HAL_UART_CHANNEL 1
+#define HAL_UART_RX_FIFO_SIZE 400
+#define HAL_UART_TX_FIFO_SIZE 400
 
-/*- Prototypes -------------------------------------------------------------*/
-void NWK_Init(void);
-void NWK_SetAddr(uint16_t addr);
-void NWK_SetPanId(uint16_t panId);
-void NWK_OpenEndpoint(uint8_t id, bool (*handler)(NWK_DataInd_t *ind));
-bool NWK_Busy(void);
-void NWK_Lock(void);
-void NWK_Unlock(void);
-void NWK_SleepReq(void);
-void NWK_WakeupReq(void);
-void NWK_TaskHandler(void);
+#define SYS_SECURITY_MODE 0
 
-uint8_t NWK_LinearizeLqi(uint8_t lqi);
+#define NWK_BUFFERS_AMOUNT 30
+#define NWK_DUPLICATE_REJECTION_TABLE_SIZE 10
+#define NWK_DUPLICATE_REJECTION_TTL 3000  // ms
+#define NWK_ROUTE_TABLE_SIZE 100
+#define NWK_ROUTE_DEFAULT_SCORE 3
+#define NWK_ACK_WAIT_TIME 2000  // ms
 
-#endif // _NWK_H_
+#define NWK_ENABLE_ROUTING
+// #define NWK_ENABLE_SECURITY
+
+#endif  // _CONFIG_H_
