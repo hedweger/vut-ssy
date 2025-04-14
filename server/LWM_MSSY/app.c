@@ -43,7 +43,6 @@ void APP_dataRoute(NWK_DataInd_t *ind) {
 }
 
 void APP_dataSend(AppMsgType_t msgType, uint8_t addr) {
-  uint8_t dummy = 69;
   appMsg.msgType = msgType;
   switch (msgType) {
     case OFFER:
@@ -53,13 +52,18 @@ void APP_dataSend(AppMsgType_t msgType, uint8_t addr) {
       appMsg.data = &dummy;
       break;
   }
+  uint8_t app_size = sizeof(appMsg);
+  memcpy(appMsgBuffer, appMsg, app_size);
 
   dataReq.dstAddr = addr;
   dataReq.dstEndpoint = APP_ENDPOINT;
   dataReq.srcEndpoint = APP_ENDPOINT;
   dataReq.options = NWK_OPT_ENABLE_SECURITY;
-  dataReq.size = sizeof(appMsg);
-  memcpy(dataReq.data, &appMsg, sizeof(appMsg));
+  dataReq.size = app_size;
+  dataReq.data = NULL;
+  
+  memcpy(dataReq.data, appMsgBuffer, app_size);
+  
   dataReq.confirm = APP_dataConf;
   NWK_DataReq(&dataReq);
 
@@ -67,10 +71,9 @@ void APP_dataSend(AppMsgType_t msgType, uint8_t addr) {
   dataReqBusy = true;
 }
 
-#if DESIGNATION == 0  // client
+#if DESIGNATION == 1  // client
 bool APP_dataRecv(NWK_DataInd_t *ind) {
-  AppMsg_t *recv;
-  memcpy(recv, ind->data, sizeof(ind->data));
+  AppMsg_t *recv = (AppMsg_t *)ind->data;
 
   switch (recv->msgType) {
     case RELEASE:
@@ -88,8 +91,7 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
 }
 #else
 bool APP_dataRecv(NWK_DataInd_t *ind) {
-  AppMsg_t *recv;
-  memcpy(recv, ind->data, sizeof(ind->data));
+  AppMsg_t *recv = (AppMsg_t *)ind->data;
 
   switch (recv->msgType) {
     case DATA:
