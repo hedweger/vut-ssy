@@ -70,7 +70,7 @@ void APP_dataSend(AppMsgType_t msgType, uint8_t addr) {
 #if DESIGNATION == 0  // client
 bool APP_dataRecv(NWK_DataInd_t *ind) {
   AppMsg_t *recv;
-  memcpy(recv, ind->data, ind->size);
+  memcpy(recv, ind->data, sizeof(ind->data));
 
   switch (recv->msgType) {
     case RELEASE:
@@ -89,7 +89,7 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
 #else
 bool APP_dataRecv(NWK_DataInd_t *ind) {
   AppMsg_t *recv;
-  memcpy(recv, ind->data, ind->size);
+  memcpy(recv, ind->data, sizeof(ind->data));
 
   switch (recv->msgType) {
     case DATA:
@@ -109,7 +109,7 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
     case INFORM:
       APP_dataSend(ACK, ind->srcAddr);
       break;
-    case default:
+    default:
       HAL_UartWriteString("Unknown msg type: ");
       HAL_UartWriteByte(recv->msgType);
       break;
