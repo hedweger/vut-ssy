@@ -148,6 +148,12 @@ void HAL_UartWriteByte(uint8_t byte)
   txFifo.bytes++;
 }
 
+void HAL_UartWriteString(const char *str) {
+	while (*str != '\0') {
+		HAL_UartWriteByte(*str++);
+	}
+}
+
 /*************************************************************************//**
 *****************************************************************************/
 uint8_t HAL_UartReadByte(void)

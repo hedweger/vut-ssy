@@ -48,7 +48,7 @@
 #define _PHY_H_
 
 /*- Includes ---------------------------------------------------------------*/
-#include "../../../sys/inc/sysConfig.h"
+#include "sysConfig.h"
 #include <stdbool.h>
 #include <stdint.h>
 

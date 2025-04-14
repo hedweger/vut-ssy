@@ -53,7 +53,7 @@
 
 
 // Address must be set to 0 for the first device, and to 1 for the second one.
-#define APP_ADDR                  0
+#define APP_ADDR                  00
 #define APP_PANID                 0x80
 #define APP_ENDPOINT              1
 //#define APP_SECURITY_KEY          "mssy2017"

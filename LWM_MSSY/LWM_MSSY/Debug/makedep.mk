@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+app.c
+
 main.c
 
 stack\hal\atmega256rfr2\src\hal.c
