@@ -50,7 +50,8 @@
 /*- Definitions ------------------------------------------------------------*/
 
 #define UART_SPEED 115200
-#define DESIGNATION 0  // 0 -> server, 1 -> client
+#define DESIGNATION 0 // 0 -> server, 1 -> client
+#define APP_ENABLED 1 // 0 -> off, 1 -> on
 
 // Address must be set to 0 for the first device, and to 1 for the second one.
 #define APP_ADDR 00
@@ -75,12 +76,12 @@
 
 #define NWK_BUFFERS_AMOUNT 30
 #define NWK_DUPLICATE_REJECTION_TABLE_SIZE 10
-#define NWK_DUPLICATE_REJECTION_TTL 3000  // ms
+#define NWK_DUPLICATE_REJECTION_TTL 3000 // ms
 #define NWK_ROUTE_TABLE_SIZE 100
 #define NWK_ROUTE_DEFAULT_SCORE 3
-#define NWK_ACK_WAIT_TIME 2000  // ms
+#define NWK_ACK_WAIT_TIME 2000 // ms
 
 #define NWK_ENABLE_ROUTING
 // #define NWK_ENABLE_SECURITY
 
-#endif  // _CONFIG_H_
+#endif // _CONFIG_H_
