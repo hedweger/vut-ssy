@@ -49,11 +49,11 @@ void APP_dataSend(AppMsgType_t msgType, uint8_t addr) {
       memcpy(appMsg.data, &routeTablePtr, sizeof(uint16_t));
       break;
     default:
-      appMsg.data = &dummy;
+      appMsg.data = NULL;
       break;
   }
   uint8_t app_size = sizeof(appMsg);
-  memcpy(appMsgBuffer, appMsg, app_size);
+  memcpy(appMsgBuffer, &appMsg, app_size);
 
   dataReq.dstAddr = addr;
   dataReq.dstEndpoint = APP_ENDPOINT;

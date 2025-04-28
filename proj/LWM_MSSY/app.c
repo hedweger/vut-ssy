@@ -118,10 +118,10 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
     }
     break;
   case APP_SLEEP:
-    routeTable[recv->srcAddr].sleeping = true;
+    routeTable[ind->srcAddr].sleeping = true;
     break;
   case RECONNECT:
-    routeTable[recv->srcAddr].sleeping = false;
+    routeTable[ind->srcAddr].sleeping = false;
     break;
   case DISCOVER:
   case DECLINE:
@@ -152,7 +152,8 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
      * in the routing table.
      */
     routeTable[ind->srcAddr].in_use = true;
-    HAL_UartWriteString("Accepted client on addr.: " << ind->srcAddr);
+    HAL_UartWriteString("Accepted client on addr.: ");
+    HAL_UartWriteString(ind->srcAddr);
     APP_dataSend(APP_ACK, ind->srcAddr);
     break;
   default:
@@ -187,7 +188,6 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
 
   return true;
 }
-#endif
 
 void APP_dataConf(NWK_DataReq_t *req) {
   dataReqBusy = false;
