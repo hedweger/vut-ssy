@@ -1,4 +1,4 @@
-## Dokumentace modulu aplikace
+## MPC-SSY Projekt | 
 
 Tato dokumentace popisuje modul `app` (`app.h` a `app.c`) P2P (peer-to-peer) síťové aplikace. Poskytuje přehled účelu modulu, datových struktur, stavového automatu, API funkcí a detailů implementace.
 
@@ -7,7 +7,6 @@ Tato dokumentace popisuje modul `app` (`app.h` a `app.c`) P2P (peer-to-peer) sí
 Modul `app` implementuje aplikační logiku pro komunikaci peer-to-peer nad síťovou (NWK) a fyzickou (PHY) vrstvou. Zajišťuje:
 
 * Inicializaci parametrů aplikace a síťových nastavení.
-* Správu stavu aplikace pomocí jednoduchého stavového automatu.
 * Odesílání a přijímání zpráv mezi uzly (klienty a serverem).
 * Údržbu směrovací tabulky pro klientské uzly (na serveru).
 * Zpracování UART I/O pro ladění a logování dat.
@@ -17,6 +16,8 @@ Modul může pracovat ve dvou rolích, určovaných makrem `DESIGNATION` v `conf
 
 * **Klient** (`DESIGNATION=1`): Iniciuje objevování, žádá o přiřazení adresy, odesílá data serveru.
 * **Server** (`DESIGNATION=0`): Nabízí přiřazení adres, udržuje směrovací tabulku, přijímá a loguje data od klientů.
+
+Tohle makro existuje pouze pro nároky představení projektu, klientský kód by v reálné aplikaci byl výrazně závislý na zařízení a nárocích implementace.
 
 ### 2. Přehled souborů
 
@@ -44,9 +45,7 @@ Definuje veřejné rozhraní a základní datové typy modulu aplikace.
   * `void APP_init(void)`: Inicializuje aplikaci a síť.
   * `void APP_timerHandler(SYS_Timer_t *timer)`: Obsluha periodického časovače.
   * `bool APP_dataRecv(NWK_DataInd_t *ind)`: Callback pro příchozí síťová data.
-  * `void APP_dataOut(void)`: (Nepoužito, místo pro logiku odesílání).
   * `void APP_dataConf(NWK_DataReq_t *req)`: Callback po dokončení přenosu.
-  * `void APP_msgCreate(void)`: (Nepoužito, místo pro vytváření zpráv).
 
 #### 2.2 `app.c`
 
@@ -92,11 +91,11 @@ Aplikační modul využívá jednoduchý dvoustavový automat:
    * Server přijme `DISCOVER`, přidělí adresu funkcí `APP_pushAddr`, odešle `OFFER` s navrženým indexem adresy.
 3. **Zpracování OFFER na klientovi**:
 
-   * Klient přijme `OFFER`, odešle `APP_ACK` pro potvrzení.
+   * Klient přijme `OFFER`, odešle `REQUEST` pro potvrzení.
 4. **Zpracování REQUEST na serveru**:
 
    * Server po obdržení `REQUEST` označí položku tabulky jako používanou a odešle `APP_ACK`.
-5. **Výmena dat**:
+5. **Výměna Dat**:
 
    * Server může požadovat data přes `REQUEST_DATA`; klient odpoví `APPDATA` s payload.
    * Klient může také iniciovat odeslání přes `APPDATA`, když je potřeba.
@@ -121,8 +120,4 @@ Konfigurace jsou definovány v `config.h` (např. `APP_ADDR`, `APP_PANID`, `APP_
 * Implementovat `APP_dataOut` a `APP_msgCreate` pro strukturovanou sestavu zpráv.
 * Přidat bezpečnostní a směrovací politiky pomocí `NWK_ENABLE_SECURITY`.
 * Vylepšit správu směrovací tabulky (např. expirace položek, omezení počtu klientů).
-
----
-
-*Konec dokumentace modulu aplikace.*
 
