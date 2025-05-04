@@ -84,26 +84,24 @@ Aplikační modul využívá jednoduchý dvoustavový automat:
 2. **IDLE**: Rezervní stav pro budoucí logiku; periodické úlohy běží přes callback časovače.
 
 ### 4. Tok zpráv
-#### Iniciace komunikace
+#### 4.1. Iniciace komunikace
 ![](assets/init.svg)
-
 1. **Start klienta**: V `APP_init` klient odešle `DISCOVER` serveru.
 2. **Objevování na serveru**:
-
    * Server přijme `DISCOVER`, přidělí adresu funkcí `APP_pushAddr`, odešle `OFFER` s navrženým indexem adresy.
 3. **Zpracování OFFER na klientovi**:
-
    * Klient přijme `OFFER`, odešle `REQUEST` pro potvrzení.
 4. **Zpracování REQUEST na serveru**:
-
    * Server po obdržení `REQUEST` označí položku tabulky jako používanou a odešle `APP_ACK`.
-#### **Výměna Dat**:
-
+#### 4.2. **Výměna Dat**:
+![](assets/data.svg)
    * Server může požadovat data přes `REQUEST_DATA`; klient odpoví `APPDATA` s payload.
    * Klient může také iniciovat odeslání přes `APPDATA`, když je potřeba.
-#### **Režim spánku/probuzení**:
 
+#### 4.3. **Režim spánku/probuzení**:
+![](assets/sleep.svg)
    * Klient informuje server zprávou `APP_SLEEP` a `RECONNECT`; server aktualizuje flag `sleeping`.
+   * Během spánku server klienta nemůže kontaktovat, musí teda počkat než mu klient znovu ohlásí `RECONNECT`.
 
 ### 5. Integrace s dalšími vrstvami
 
