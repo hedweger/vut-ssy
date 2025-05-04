@@ -85,6 +85,8 @@ Aplikační modul využívá jednoduchý dvoustavový automat:
 
 ### 4. Tok zpráv
 
+[](assets/init.svg)
+
 1. **Start klienta**: V `APP_init` klient odešle `DISCOVER` serveru.
 2. **Objevování na serveru**:
 
