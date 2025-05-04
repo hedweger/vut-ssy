@@ -36,6 +36,8 @@ Definuje veřejné rozhraní a základní datové typy modulu aplikace.
   * `AppMsg_t`: Kontejner zprávy, obsahuje hlavičku (velikost, typ, sleep flag) a ukazatel na data.
   * `RouteTable_t`: Položka směrovací tabulky (adresa, endpoint, typ senzoru, sleep status, značka použitelnosti).
 
+  ![](assets/datagram.svg)
+
 * **Konstanty a makra**:
 
   * `APP_HEADER_SIZE`, `DEBUG_PRINT` a makra pro velikosti bufferů.

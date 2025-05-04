@@ -69,5 +69,3 @@ void APP_dataConf(NWK_DataReq_t *req);
 void APP_msgCreate(void);
 
 #endif
-
-
