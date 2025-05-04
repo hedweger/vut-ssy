@@ -22,5 +22,5 @@
 <text stroke="#FFF" x="300" y="130" text-anchor="middle" font-family="Arial" font-size="12">REQUEST</text>
 
 <line x1="450" y1="180" x2="150" y2="180" stroke="#FFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text stroke="#FFF" x="300" y="170" text-anchor="middle" font-family="Arial" font-size="12">ACK</text>
+<text fill="#FFF" x="300" y="170" text-anchor="middle" font-family="Arial" font-size="12">ACK</text>
 </svg>
