@@ -8,18 +8,18 @@
 </defs>
 <line x1="150" y1="20" x2="150" y2="240" stroke="#FFF" stroke-dasharray="4"/>
 <line x1="450" y1="20" x2="450" y2="240" stroke="#FFF" stroke-dasharray="4"/>
-<text stroke="#FFF" x="150" y="15" text-anchor="middle" font-family="Arial" font-size="14">Klient</text>
-<text stroke="#FFF" x="450" y="15" text-anchor="middle" font-family="Arial" font-size="14">Server</text>
+<text fill="#FFF" x="150" y="15" text-anchor="middle" font-family="Arial" font-size="14">Klient</text>
+<text fill="#FFF" x="450" y="15" text-anchor="middle" font-family="Arial" font-size="14">Server</text>
 
 <!-- Messages -->
 <line x1="150" y1="60" x2="450" y2="60" stroke="#FFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text stroke="#FFF" x="300" y="50" text-anchor="middle" font-family="Arial" font-size="12">DISCOVER</text>
+<text fill="#FFF" x="300" y="50" text-anchor="middle" font-family="Arial" font-size="12">DISCOVER</text>
 
 <line x1="450" y1="100" x2="150" y2="100" stroke="#FFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text stroke="#FFF" x="300" y="90" text-anchor="middle" font-family="Arial" font-size="12">OFFER</text>
+<text fill="#FFF" x="300" y="90" text-anchor="middle" font-family="Arial" font-size="12">OFFER</text>
 
 <line x1="150" y1="140" x2="450" y2="140" stroke="#FFF" stroke-width="2" marker-end="url(#arrow)"/>
-<text stroke="#FFF" x="300" y="130" text-anchor="middle" font-family="Arial" font-size="12">REQUEST</text>
+<text fill="#FFF" x="300" y="130" text-anchor="middle" font-family="Arial" font-size="12">REQUEST</text>
 
 <line x1="450" y1="180" x2="150" y2="180" stroke="#FFF" stroke-width="2" marker-end="url(#arrow)"/>
 <text fill="#FFF" x="300" y="170" text-anchor="middle" font-family="Arial" font-size="12">ACK</text>
