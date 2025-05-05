@@ -24,6 +24,8 @@ static uint8_t appMsgBuffer[NWK_MAX_PAYLOAD_SIZE - sizeof(AppMsg_t)];
 
 static RouteTable_t routeTable[ROUTE_TABLE_SIZE];
 static uint8_t routeTablePtr = 0;
+static uint16_t meAddr = APP_ADDR;
+static uint16_t meEndpoint = APP_ENDPOINT;
 
 void HAL_UartBytesReceived(uint16_t bytes) { HAL_UartWriteString(bytes); }
 
@@ -41,8 +43,10 @@ void APP_dataSend(AppMsgType_t msgType, uint8_t addr) {
   }
 
   dataReq.dstAddr = route.addr;
+  //dataReq.dstAddr = 00;
   dataReq.dstEndpoint = route.endpoint;
-  dataReq.srcEndpoint = route.endpoint;
+  //dataReq.dstEndpoint = meEndpoint;
+  dataReq.srcEndpoint = meEndpoint;
   dataReq.options = NWK_OPT_ENABLE_SECURITY;
   dataReq.confirm = APP_dataConf;
   NWK_DataReq(&dataReq);
@@ -76,7 +80,7 @@ uint16_t APP_pushAddr(uint8_t endpoint, uint8_t *data) {
 bool APP_dataRecv(NWK_DataInd_t *ind) {
   AppMsg_t *recv = (AppMsg_t *)ind->appdata;
 #if DESIGNATION == 1 // client
-  switch (msgType) {
+  switch (recv->msgType) {
   case RELEASE:
     /*
      * Client handles the release of
@@ -96,6 +100,8 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
      * bad could theoretically happen.
      */
     if (1 == 1) {
+	  meAddr = *ind->data;
+	  NWK_SetAddr(meAddr);
       APP_dataSend(APP_ACK, ind->srcAddr);
     }
     break;
