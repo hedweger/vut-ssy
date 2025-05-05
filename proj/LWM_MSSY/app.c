@@ -43,10 +43,13 @@ void APP_dataSend(AppMsgType_t msgType, uint8_t addr) {
   }
   dataReq.size = sizeof(dataReq.data) + sizeof(dataReq.data->data) + 2;
 
+#if DESIGNATION == 1 // client
+  dataReq.dstAddr = 00;
+  dataReq.dstEndpoint = meEndpoint;
+#else
   dataReq.dstAddr = addr;
-  //dataReq.dstAddr = 00;
   dataReq.dstEndpoint = route.endpoint;
-  //dataReq.dstEndpoint = meEndpoint;
+#endif
   dataReq.srcEndpoint = meEndpoint;
   dataReq.options = NWK_OPT_ENABLE_SECURITY;
   dataReq.confirm = APP_dataConf;

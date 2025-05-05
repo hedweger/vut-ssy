@@ -458,7 +458,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1d54
+.text           0x00000000     0x1d5a
  *(.vectors)
  .vectors       0x00000000      0x134 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6/crtatmega256rfr2.o
                 0x00000000                __vector_default
@@ -610,230 +610,230 @@ END GROUP
                 0x0000026e      0x1c6 app.o
                 0x0000026e                APP_dataRecv
  .text.APP_init
-                0x00000434       0x2e app.o
+                0x00000434       0x34 app.o
                 0x00000434                APP_init
- .text.main     0x00000462       0x26 main.o
-                0x00000462                main
+ .text.main     0x00000468       0x26 main.o
+                0x00000468                main
  .text.HAL_Init
-                0x00000488       0x28 stack/hal/atmega256rfr2/src/hal.o
-                0x00000488                HAL_Init
+                0x0000048e       0x28 stack/hal/atmega256rfr2/src/hal.o
+                0x0000048e                HAL_Init
  .text.HAL_TimerInit
-                0x000004b0       0x2a stack/hal/atmega256rfr2/src/halTimer.o
-                0x000004b0                HAL_TimerInit
+                0x000004b6       0x2a stack/hal/atmega256rfr2/src/halTimer.o
+                0x000004b6                HAL_TimerInit
  .text.__vector_42
-                0x000004da       0x22 stack/hal/atmega256rfr2/src/halTimer.o
-                0x000004da                __vector_42
+                0x000004e0       0x22 stack/hal/atmega256rfr2/src/halTimer.o
+                0x000004e0                __vector_42
  .text.__vector_13
-                0x000004fc       0x1e stack/hal/drivers/atmega256rfr2/src/halSleep.o
-                0x000004fc                __vector_13
+                0x00000502       0x1e stack/hal/drivers/atmega256rfr2/src/halSleep.o
+                0x00000502                __vector_13
  .text.HAL_UartInit
-                0x0000051a       0xaa stack/hal/drivers/atmega256rfr2/src/halUart.o
-                0x0000051a                HAL_UartInit
+                0x00000520       0xaa stack/hal/drivers/atmega256rfr2/src/halUart.o
+                0x00000520                HAL_UartInit
  .text.HAL_UartWriteByte
-                0x000005c4       0x4e stack/hal/drivers/atmega256rfr2/src/halUart.o
-                0x000005c4                HAL_UartWriteByte
+                0x000005ca       0x4e stack/hal/drivers/atmega256rfr2/src/halUart.o
+                0x000005ca                HAL_UartWriteByte
  .text.HAL_UartWriteString
-                0x00000612       0x1c stack/hal/drivers/atmega256rfr2/src/halUart.o
-                0x00000612                HAL_UartWriteString
+                0x00000618       0x1c stack/hal/drivers/atmega256rfr2/src/halUart.o
+                0x00000618                HAL_UartWriteString
  .text.__vector_37
-                0x0000062e       0x38 stack/hal/drivers/atmega256rfr2/src/halUart.o
-                0x0000062e                __vector_37
+                0x00000634       0x38 stack/hal/drivers/atmega256rfr2/src/halUart.o
+                0x00000634                __vector_37
  .text.__vector_36
-                0x00000666       0xae stack/hal/drivers/atmega256rfr2/src/halUart.o
-                0x00000666                __vector_36
+                0x0000066c       0xae stack/hal/drivers/atmega256rfr2/src/halUart.o
+                0x0000066c                __vector_36
  .text.HAL_UartTaskHandler
-                0x00000714       0x86 stack/hal/drivers/atmega256rfr2/src/halUart.o
-                0x00000714                HAL_UartTaskHandler
+                0x0000071a       0x86 stack/hal/drivers/atmega256rfr2/src/halUart.o
+                0x0000071a                HAL_UartTaskHandler
  .text.NWK_Init
-                0x0000079a       0x2e stack/nwk/src/nwk.o
-                0x0000079a                NWK_Init
+                0x000007a0       0x2e stack/nwk/src/nwk.o
+                0x000007a0                NWK_Init
  .text.NWK_SetAddr
-                0x000007c8        0xe stack/nwk/src/nwk.o
-                0x000007c8                NWK_SetAddr
+                0x000007ce        0xe stack/nwk/src/nwk.o
+                0x000007ce                NWK_SetAddr
  .text.NWK_SetPanId
-                0x000007d6        0xe stack/nwk/src/nwk.o
-                0x000007d6                NWK_SetPanId
+                0x000007dc        0xe stack/nwk/src/nwk.o
+                0x000007dc                NWK_SetPanId
  .text.NWK_OpenEndpoint
-                0x000007e4       0x12 stack/nwk/src/nwk.o
-                0x000007e4                NWK_OpenEndpoint
+                0x000007ea       0x12 stack/nwk/src/nwk.o
+                0x000007ea                NWK_OpenEndpoint
  .text.NWK_TaskHandler
-                0x000007f6        0x8 stack/nwk/src/nwk.o
-                0x000007f6                NWK_TaskHandler
+                0x000007fc        0x8 stack/nwk/src/nwk.o
+                0x000007fc                NWK_TaskHandler
  .text.nwkDataReqTxConf
-                0x000007fe       0x46 stack/nwk/src/nwkDataReq.o
+                0x00000804       0x46 stack/nwk/src/nwkDataReq.o
  .text.nwkDataReqInit
-                0x00000844        0xa stack/nwk/src/nwkDataReq.o
-                0x00000844                nwkDataReqInit
+                0x0000084a        0xa stack/nwk/src/nwkDataReq.o
+                0x0000084a                nwkDataReqInit
  .text.NWK_DataReq
-                0x0000084e       0x48 stack/nwk/src/nwkDataReq.o
-                0x0000084e                NWK_DataReq
+                0x00000854       0x48 stack/nwk/src/nwkDataReq.o
+                0x00000854                NWK_DataReq
  .text.nwkDataReqTaskHandler
-                0x00000896      0x146 stack/nwk/src/nwkDataReq.o
-                0x00000896                nwkDataReqTaskHandler
+                0x0000089c      0x146 stack/nwk/src/nwkDataReq.o
+                0x0000089c                nwkDataReqTaskHandler
  .text.nwkFrameInit
-                0x000009dc       0x16 stack/nwk/src/nwkFrame.o
-                0x000009dc                nwkFrameInit
+                0x000009e2       0x16 stack/nwk/src/nwkFrame.o
+                0x000009e2                nwkFrameInit
  .text.nwkFrameAlloc
-                0x000009f2       0x72 stack/nwk/src/nwkFrame.o
-                0x000009f2                nwkFrameAlloc
+                0x000009f8       0x72 stack/nwk/src/nwkFrame.o
+                0x000009f8                nwkFrameAlloc
  .text.nwkFrameFree
-                0x00000a64       0x14 stack/nwk/src/nwkFrame.o
-                0x00000a64                nwkFrameFree
+                0x00000a6a       0x14 stack/nwk/src/nwkFrame.o
+                0x00000a6a                nwkFrameFree
  .text.nwkFrameNext
-                0x00000a78       0x4a stack/nwk/src/nwkFrame.o
-                0x00000a78                nwkFrameNext
+                0x00000a7e       0x4a stack/nwk/src/nwkFrame.o
+                0x00000a7e                nwkFrameNext
  .text.nwkFrameCommandInit
-                0x00000ac2       0x28 stack/nwk/src/nwkFrame.o
-                0x00000ac2                nwkFrameCommandInit
+                0x00000ac8       0x28 stack/nwk/src/nwkFrame.o
+                0x00000ac8                nwkFrameCommandInit
  .text.nwkRouteInit
-                0x00000aea       0x40 stack/nwk/src/nwkRoute.o
-                0x00000aea                nwkRouteInit
+                0x00000af0       0x40 stack/nwk/src/nwkRoute.o
+                0x00000af0                nwkRouteInit
  .text.NWK_RouteFindEntry
-                0x00000b2a       0x64 stack/nwk/src/nwkRoute.o
-                0x00000b2a                NWK_RouteFindEntry
+                0x00000b30       0x64 stack/nwk/src/nwkRoute.o
+                0x00000b30                NWK_RouteFindEntry
  .text.NWK_RouteNewEntry
-                0x00000b8e       0x44 stack/nwk/src/nwkRoute.o
-                0x00000b8e                NWK_RouteNewEntry
+                0x00000b94       0x44 stack/nwk/src/nwkRoute.o
+                0x00000b94                NWK_RouteNewEntry
  .text.NWK_RouteFreeEntry
-                0x00000bd2       0x14 stack/nwk/src/nwkRoute.o
-                0x00000bd2                NWK_RouteFreeEntry
+                0x00000bd8       0x14 stack/nwk/src/nwkRoute.o
+                0x00000bd8                NWK_RouteFreeEntry
  .text.NWK_RouteNextHop
-                0x00000be6       0x14 stack/nwk/src/nwkRoute.o
-                0x00000be6                NWK_RouteNextHop
+                0x00000bec       0x14 stack/nwk/src/nwkRoute.o
+                0x00000bec                NWK_RouteNextHop
  .text.nwkRouteRemove
-                0x00000bfa        0xa stack/nwk/src/nwkRoute.o
-                0x00000bfa                nwkRouteRemove
+                0x00000c00        0xa stack/nwk/src/nwkRoute.o
+                0x00000c00                nwkRouteRemove
  .text.nwkRouteFrameReceived
-                0x00000c04       0x9e stack/nwk/src/nwkRoute.o
-                0x00000c04                nwkRouteFrameReceived
+                0x00000c0a       0x9e stack/nwk/src/nwkRoute.o
+                0x00000c0a                nwkRouteFrameReceived
  .text.nwkRouteFrameSent
-                0x00000ca2       0x8e stack/nwk/src/nwkRoute.o
-                0x00000ca2                nwkRouteFrameSent
+                0x00000ca8       0x8e stack/nwk/src/nwkRoute.o
+                0x00000ca8                nwkRouteFrameSent
  .text.nwkRoutePrepareTx
-                0x00000d30       0x3e stack/nwk/src/nwkRoute.o
-                0x00000d30                nwkRoutePrepareTx
+                0x00000d36       0x3e stack/nwk/src/nwkRoute.o
+                0x00000d36                nwkRoutePrepareTx
  .text.nwkRouteFrame
-                0x00000d6e       0x98 stack/nwk/src/nwkRoute.o
-                0x00000d6e                nwkRouteFrame
+                0x00000d74       0x98 stack/nwk/src/nwkRoute.o
+                0x00000d74                nwkRouteFrame
  .text.nwkRouteErrorReceived
-                0x00000e06       0x1e stack/nwk/src/nwkRoute.o
-                0x00000e06                nwkRouteErrorReceived
+                0x00000e0c       0x1e stack/nwk/src/nwkRoute.o
+                0x00000e0c                nwkRouteErrorReceived
  .text.nwkRxServiceDataInd
-                0x00000e24       0x30 stack/nwk/src/nwkRx.o
+                0x00000e2a       0x30 stack/nwk/src/nwkRx.o
  .text.nwkRxDuplicateRejectionTimerHandler
-                0x00000e54       0x2c stack/nwk/src/nwkRx.o
+                0x00000e5a       0x2c stack/nwk/src/nwkRx.o
  .text.nwkRxInit
-                0x00000e80       0x3a stack/nwk/src/nwkRx.o
-                0x00000e80                nwkRxInit
+                0x00000e86       0x3a stack/nwk/src/nwkRx.o
+                0x00000e86                nwkRxInit
  .text.PHY_DataInd
-                0x00000eba       0x54 stack/nwk/src/nwkRx.o
-                0x00000eba                PHY_DataInd
+                0x00000ec0       0x54 stack/nwk/src/nwkRx.o
+                0x00000ec0                PHY_DataInd
  .text.nwkRxTaskHandler
-                0x00000f0e      0x478 stack/nwk/src/nwkRx.o
-                0x00000f0e                nwkRxTaskHandler
+                0x00000f14      0x478 stack/nwk/src/nwkRx.o
+                0x00000f14                nwkRxTaskHandler
  .text.nwkTxDelayTimerHandler
-                0x00001386       0x58 stack/nwk/src/nwkTx.o
+                0x0000138c       0x58 stack/nwk/src/nwkTx.o
  .text.nwkTxAckWaitTimerHandler
-                0x000013de       0x64 stack/nwk/src/nwkTx.o
+                0x000013e4       0x64 stack/nwk/src/nwkTx.o
  .text.nwkTxInit
-                0x00001442       0x46 stack/nwk/src/nwkTx.o
-                0x00001442                nwkTxInit
+                0x00001448       0x46 stack/nwk/src/nwkTx.o
+                0x00001448                nwkTxInit
  .text.nwkTxFrame
-                0x00001488       0x9c stack/nwk/src/nwkTx.o
-                0x00001488                nwkTxFrame
+                0x0000148e       0x9c stack/nwk/src/nwkTx.o
+                0x0000148e                nwkTxFrame
  .text.nwkTxBroadcastFrame
-                0x00001524       0x86 stack/nwk/src/nwkTx.o
-                0x00001524                nwkTxBroadcastFrame
+                0x0000152a       0x86 stack/nwk/src/nwkTx.o
+                0x0000152a                nwkTxBroadcastFrame
  .text.nwkTxAckReceived
-                0x000015aa       0x4a stack/nwk/src/nwkTx.o
-                0x000015aa                nwkTxAckReceived
+                0x000015b0       0x4a stack/nwk/src/nwkTx.o
+                0x000015b0                nwkTxAckReceived
  .text.PHY_DataConf
-                0x000015f4       0x46 stack/nwk/src/nwkTx.o
-                0x000015f4                PHY_DataConf
+                0x000015fa       0x46 stack/nwk/src/nwkTx.o
+                0x000015fa                PHY_DataConf
  .text.nwkTxTaskHandler
-                0x0000163a      0x136 stack/nwk/src/nwkTx.o
-                0x0000163a                nwkTxTaskHandler
+                0x00001640      0x136 stack/nwk/src/nwkTx.o
+                0x00001640                nwkTxTaskHandler
  .text.phySetChannel
-                0x00001770       0x3c stack/phy/atmega256rfr2/src/phy.o
+                0x00001776       0x3c stack/phy/atmega256rfr2/src/phy.o
  .text.phyTrxSetState
-                0x000017ac       0x24 stack/phy/atmega256rfr2/src/phy.o
+                0x000017b2       0x24 stack/phy/atmega256rfr2/src/phy.o
  .text.phySetRxState
-                0x000017d0       0x18 stack/phy/atmega256rfr2/src/phy.o
+                0x000017d6       0x18 stack/phy/atmega256rfr2/src/phy.o
  .text.PHY_Init
-                0x000017e8       0x2e stack/phy/atmega256rfr2/src/phy.o
-                0x000017e8                PHY_Init
+                0x000017ee       0x2e stack/phy/atmega256rfr2/src/phy.o
+                0x000017ee                PHY_Init
  .text.PHY_SetRxState
-                0x00001816        0x8 stack/phy/atmega256rfr2/src/phy.o
-                0x00001816                PHY_SetRxState
+                0x0000181c        0x8 stack/phy/atmega256rfr2/src/phy.o
+                0x0000181c                PHY_SetRxState
  .text.PHY_SetChannel
-                0x0000181e        0x8 stack/phy/atmega256rfr2/src/phy.o
-                0x0000181e                PHY_SetChannel
+                0x00001824        0x8 stack/phy/atmega256rfr2/src/phy.o
+                0x00001824                PHY_SetChannel
  .text.PHY_SetPanId
-                0x00001826       0x24 stack/phy/atmega256rfr2/src/phy.o
-                0x00001826                PHY_SetPanId
+                0x0000182c       0x24 stack/phy/atmega256rfr2/src/phy.o
+                0x0000182c                PHY_SetPanId
  .text.PHY_SetShortAddr
-                0x0000184a       0x2e stack/phy/atmega256rfr2/src/phy.o
-                0x0000184a                PHY_SetShortAddr
+                0x00001850       0x2e stack/phy/atmega256rfr2/src/phy.o
+                0x00001850                PHY_SetShortAddr
  .text.PHY_DataReq
-                0x00001878       0x52 stack/phy/atmega256rfr2/src/phy.o
-                0x00001878                PHY_DataReq
+                0x0000187e       0x52 stack/phy/atmega256rfr2/src/phy.o
+                0x0000187e                PHY_DataReq
  .text.PHY_TaskHandler
-                0x000018ca       0xf6 stack/phy/atmega256rfr2/src/phy.o
-                0x000018ca                PHY_TaskHandler
+                0x000018d0       0xf6 stack/phy/atmega256rfr2/src/phy.o
+                0x000018d0                PHY_TaskHandler
  .text.SYS_Init
-                0x000019c0        0xe stack/sys/src/sys.o
-                0x000019c0                SYS_Init
+                0x000019c6        0xe stack/sys/src/sys.o
+                0x000019c6                SYS_Init
  .text.SYS_TaskHandler
-                0x000019ce        0xa stack/sys/src/sys.o
-                0x000019ce                SYS_TaskHandler
+                0x000019d4        0xa stack/sys/src/sys.o
+                0x000019d4                SYS_TaskHandler
  .text.placeTimer
-                0x000019d8       0xc8 stack/sys/src/sysTimer.o
+                0x000019de       0xc8 stack/sys/src/sysTimer.o
  .text.SYS_TimerInit
-                0x00001aa0        0xa stack/sys/src/sysTimer.o
-                0x00001aa0                SYS_TimerInit
+                0x00001aa6        0xa stack/sys/src/sysTimer.o
+                0x00001aa6                SYS_TimerInit
  .text.SYS_TimerStarted
-                0x00001aaa       0x34 stack/sys/src/sysTimer.o
-                0x00001aaa                SYS_TimerStarted
+                0x00001ab0       0x34 stack/sys/src/sysTimer.o
+                0x00001ab0                SYS_TimerStarted
  .text.SYS_TimerStart
-                0x00001ade       0x16 stack/sys/src/sysTimer.o
-                0x00001ade                SYS_TimerStart
+                0x00001ae4       0x16 stack/sys/src/sysTimer.o
+                0x00001ae4                SYS_TimerStart
  .text.SYS_TimerTaskHandler
-                0x00001af4       0xd6 stack/sys/src/sysTimer.o
-                0x00001af4                SYS_TimerTaskHandler
+                0x00001afa       0xd6 stack/sys/src/sysTimer.o
+                0x00001afa                SYS_TimerTaskHandler
  .text.libgcc.div
-                0x00001bca       0x44 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
-                0x00001bca                __udivmodsi4
- .text.libgcc   0x00001c0e       0x10 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
-                0x00001c0e                __tablejump2__
+                0x00001bd0       0x44 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_udivmodsi4.o)
+                0x00001bd0                __udivmodsi4
+ .text.libgcc   0x00001c14       0x10 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_tablejump2.o)
+                0x00001c14                __tablejump2__
  .text.avr-libc
-                0x00001c1e       0xaa c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(rand.o)
-                0x00001caa                rand_r
-                0x00001cac                rand
-                0x00001cb2                srand
+                0x00001c24       0xaa c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(rand.o)
+                0x00001cb0                rand_r
+                0x00001cb2                rand
+                0x00001cb8                srand
  .text.avr-libc
-                0x00001cc8       0x12 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(memcpy.o)
-                0x00001cc8                memcpy
+                0x00001cce       0x12 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(memcpy.o)
+                0x00001cce                memcpy
  .text.libgcc.div
-                0x00001cda       0x28 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_divmodsi4.o)
-                0x00001cda                __divmodsi4
+                0x00001ce0       0x28 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_divmodsi4.o)
+                0x00001ce0                __divmodsi4
  .text.libgcc.div
-                0x00001d02       0x10 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_negsi2.o)
-                0x00001d02                __negsi2
+                0x00001d08       0x10 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_negsi2.o)
+                0x00001d08                __negsi2
  .text.libgcc.mul
-                0x00001d12       0x14 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_muluhisi3.o)
-                0x00001d12                __muluhisi3
+                0x00001d18       0x14 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_muluhisi3.o)
+                0x00001d18                __muluhisi3
  .text.libgcc.mul
-                0x00001d26        0xc c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_mulshisi3.o)
-                0x00001d26                __mulshisi3
-                0x00001d2a                __mulohisi3
+                0x00001d2c        0xc c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_mulshisi3.o)
+                0x00001d2c                __mulshisi3
+                0x00001d30                __mulohisi3
  .text.libgcc.mul
-                0x00001d32       0x1e c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_umulhisi3.o)
-                0x00001d32                __umulhisi3
-                0x00001d50                . = ALIGN (0x2)
+                0x00001d38       0x1e c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_umulhisi3.o)
+                0x00001d38                __umulhisi3
+                0x00001d56                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001d50        0x0 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
-                0x00001d50                _exit
-                0x00001d50                exit
+ .fini9         0x00001d56        0x0 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+                0x00001d56                _exit
+                0x00001d56                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -852,11 +852,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001d50        0x4 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+ .fini0         0x00001d56        0x4 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001d54                _etext = .
+                0x00001d5a                _etext = .
 
-.data           0x00800200       0x90 load address 0x00001d54
+.data           0x00800200       0x90 load address 0x00001d5a
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800200        0x4 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(rand.o)
@@ -924,8 +924,8 @@ END GROUP
  COMMON         0x00801ff8       0x28 stack/nwk/src/nwk.o
                 0x00801ff8                nwkIb
                 0x00802020                PROVIDE (__bss_end, .)
-                0x00001d54                __data_load_start = LOADADDR (.data)
-                0x00001de4                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00001d5a                __data_load_start = LOADADDR (.data)
+                0x00001dea                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00802020        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -1047,24 +1047,24 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x66fe
+.debug_info     0x00000000     0x6733
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x13e6 c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6/crtatmega256rfr2.o
- .debug_info    0x000013e6      0xa4a app.o
- .debug_info    0x00001e30      0x16b main.o
- .debug_info    0x00001f9b      0x128 stack/hal/atmega256rfr2/src/hal.o
- .debug_info    0x000020c3       0xe4 stack/hal/atmega256rfr2/src/halTimer.o
- .debug_info    0x000021a7      0x184 stack/hal/drivers/atmega256rfr2/src/halSleep.o
- .debug_info    0x0000232b      0x35f stack/hal/drivers/atmega256rfr2/src/halUart.o
- .debug_info    0x0000268a      0x4ce stack/nwk/src/nwk.o
- .debug_info    0x00002b58      0x83f stack/nwk/src/nwkDataReq.o
- .debug_info    0x00003397      0x572 stack/nwk/src/nwkFrame.o
- .debug_info    0x00003909      0xb52 stack/nwk/src/nwkRoute.o
- .debug_info    0x0000445b      0xc34 stack/nwk/src/nwkRx.o
- .debug_info    0x0000508f      0xa26 stack/nwk/src/nwkTx.o
- .debug_info    0x00005ab5      0x7c4 stack/phy/atmega256rfr2/src/phy.o
- .debug_info    0x00006279      0x140 stack/sys/src/sys.o
- .debug_info    0x000063b9      0x345 stack/sys/src/sysTimer.o
+ .debug_info    0x000013e6      0xa7f app.o
+ .debug_info    0x00001e65      0x16b main.o
+ .debug_info    0x00001fd0      0x128 stack/hal/atmega256rfr2/src/hal.o
+ .debug_info    0x000020f8       0xe4 stack/hal/atmega256rfr2/src/halTimer.o
+ .debug_info    0x000021dc      0x184 stack/hal/drivers/atmega256rfr2/src/halSleep.o
+ .debug_info    0x00002360      0x35f stack/hal/drivers/atmega256rfr2/src/halUart.o
+ .debug_info    0x000026bf      0x4ce stack/nwk/src/nwk.o
+ .debug_info    0x00002b8d      0x83f stack/nwk/src/nwkDataReq.o
+ .debug_info    0x000033cc      0x572 stack/nwk/src/nwkFrame.o
+ .debug_info    0x0000393e      0xb52 stack/nwk/src/nwkRoute.o
+ .debug_info    0x00004490      0xc34 stack/nwk/src/nwkRx.o
+ .debug_info    0x000050c4      0xa26 stack/nwk/src/nwkTx.o
+ .debug_info    0x00005aea      0x7c4 stack/phy/atmega256rfr2/src/phy.o
+ .debug_info    0x000062ae      0x140 stack/sys/src/sys.o
+ .debug_info    0x000063ee      0x345 stack/sys/src/sysTimer.o
 
 .debug_abbrev   0x00000000     0x2d22
  *(.debug_abbrev)
@@ -1085,24 +1085,24 @@ END GROUP
  .debug_abbrev  0x00002b24       0x63 stack/sys/src/sys.o
  .debug_abbrev  0x00002b87      0x19b stack/sys/src/sysTimer.o
 
-.debug_line     0x00000000     0x27c0
+.debug_line     0x00000000     0x27c6
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000       0x1a c:/apps/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6/crtatmega256rfr2.o
- .debug_line    0x0000001a      0x3a2 app.o
- .debug_line    0x000003bc       0xcc main.o
- .debug_line    0x00000488      0x167 stack/hal/atmega256rfr2/src/hal.o
- .debug_line    0x000005ef      0x11e stack/hal/atmega256rfr2/src/halTimer.o
- .debug_line    0x0000070d      0x1cc stack/hal/drivers/atmega256rfr2/src/halSleep.o
- .debug_line    0x000008d9      0x2de stack/hal/drivers/atmega256rfr2/src/halUart.o
- .debug_line    0x00000bb7      0x29c stack/nwk/src/nwk.o
- .debug_line    0x00000e53      0x24c stack/nwk/src/nwkDataReq.o
- .debug_line    0x0000109f      0x1c2 stack/nwk/src/nwkFrame.o
- .debug_line    0x00001261      0x47d stack/nwk/src/nwkRoute.o
- .debug_line    0x000016de      0x4a5 stack/nwk/src/nwkRx.o
- .debug_line    0x00001b83      0x4bb stack/nwk/src/nwkTx.o
- .debug_line    0x0000203e      0x3cf stack/phy/atmega256rfr2/src/phy.o
- .debug_line    0x0000240d      0x108 stack/sys/src/sys.o
- .debug_line    0x00002515      0x2ab stack/sys/src/sysTimer.o
+ .debug_line    0x0000001a      0x3a8 app.o
+ .debug_line    0x000003c2       0xcc main.o
+ .debug_line    0x0000048e      0x167 stack/hal/atmega256rfr2/src/hal.o
+ .debug_line    0x000005f5      0x11e stack/hal/atmega256rfr2/src/halTimer.o
+ .debug_line    0x00000713      0x1cc stack/hal/drivers/atmega256rfr2/src/halSleep.o
+ .debug_line    0x000008df      0x2de stack/hal/drivers/atmega256rfr2/src/halUart.o
+ .debug_line    0x00000bbd      0x29c stack/nwk/src/nwk.o
+ .debug_line    0x00000e59      0x24c stack/nwk/src/nwkDataReq.o
+ .debug_line    0x000010a5      0x1c2 stack/nwk/src/nwkFrame.o
+ .debug_line    0x00001267      0x47d stack/nwk/src/nwkRoute.o
+ .debug_line    0x000016e4      0x4a5 stack/nwk/src/nwkRx.o
+ .debug_line    0x00001b89      0x4bb stack/nwk/src/nwkTx.o
+ .debug_line    0x00002044      0x3cf stack/phy/atmega256rfr2/src/phy.o
+ .debug_line    0x00002413      0x108 stack/sys/src/sys.o
+ .debug_line    0x0000251b      0x2ab stack/sys/src/sysTimer.o
 
 .debug_frame    0x00000000      0xa24
  *(.debug_frame)
