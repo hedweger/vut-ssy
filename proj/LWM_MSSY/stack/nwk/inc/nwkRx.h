@@ -70,12 +70,7 @@ typedef struct NWK_DataInd_t {
   uint8_t srcEndpoint;
   uint8_t dstEndpoint;
   uint8_t options;
-#ifdef APP_ENABLE
-  AppMsg_t *appdata;
-#endif
-#ifndef APP_ENABLE
   uint8_t *data;
-#endif
   uint8_t size;
   uint8_t lqi;
   int8_t rssi;

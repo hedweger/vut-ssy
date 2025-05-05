@@ -26,23 +26,24 @@ static RouteTable_t routeTable[ROUTE_TABLE_SIZE];
 static uint8_t routeTablePtr = 0;
 static uint16_t meAddr = APP_ADDR;
 static uint16_t meEndpoint = APP_ENDPOINT;
+static char *test = "test";
 
 void HAL_UartBytesReceived(uint16_t bytes) { HAL_UartWriteString(bytes); }
 
 void APP_dataSend(AppMsgType_t msgType, uint8_t addr) {
   RouteTable_t route = routeTable[addr];
+  dataReq.data->msgType = msgType;
   switch (msgType) {
   case OFFER:
-    dataReq.data = &addr;
-    dataReq.size = sizeof(uint8_t);
+    dataReq.data->data = routeTablePtr;
     break;
   case APPDATA:
-    dataReq.data = &"data";
-    dataReq.size = sizeof(dataReq.data);
+    dataReq.data->data = test;
     break;
   }
+  dataReq.size = sizeof(dataReq.data) + sizeof(dataReq.data->data) + 2;
 
-  dataReq.dstAddr = route.addr;
+  dataReq.dstAddr = addr;
   //dataReq.dstAddr = 00;
   dataReq.dstEndpoint = route.endpoint;
   //dataReq.dstEndpoint = meEndpoint;
@@ -78,7 +79,7 @@ uint16_t APP_pushAddr(uint8_t endpoint, uint8_t *data) {
 }
 
 bool APP_dataRecv(NWK_DataInd_t *ind) {
-  AppMsg_t *recv = (AppMsg_t *)ind->appdata;
+  AppMsg_t *recv = (AppMsg_t *)ind->data;
 #if DESIGNATION == 1 // client
   switch (recv->msgType) {
   case RELEASE:
@@ -100,7 +101,7 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
      * bad could theoretically happen.
      */
     if (1 == 1) {
-	  meAddr = *ind->data;
+	  meAddr = recv->data;
 	  NWK_SetAddr(meAddr);
       APP_dataSend(APP_ACK, ind->srcAddr);
     }
@@ -144,8 +145,8 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
      * one.
      */
     routeTablePtr++;
-    int16_t addr = APP_pushAddr(ind->srcEndpoint, ind->appdata);
-    APP_dataSend(OFFER, addr);
+    int16_t addr = APP_pushAddr(ind->srcEndpoint, ind->data);
+    APP_dataSend(OFFER, ind->srcAddr);
     break;
   case REQUEST:
     /*
@@ -161,6 +162,9 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
     HAL_UartWriteString("Accepted client on addr.: ");
     HAL_UartWriteString(ind->srcAddr);
     APP_dataSend(APP_ACK, ind->srcAddr);
+    break;
+  case APP_ACK:
+    APP_dataSend(REQUEST_DATA, routeTablePtr);
     break;
   default:
     HAL_UartWriteString("Unknown msg type: ");

@@ -263,8 +263,8 @@ static bool nwkRxServiceDataInd(NWK_DataInd_t *ind)
 
   if (ind->size < 1)
     return false;
-/*
-  switch (ind->appdata[0])
+
+  switch (ind->data[0])
   {
     case NWK_COMMAND_ACK:
       return nwkTxAckReceived(ind);
@@ -285,8 +285,6 @@ static bool nwkRxServiceDataInd(NWK_DataInd_t *ind)
     default:
       return false;
   }
-  */
-return false;
 }
 
 /*************************************************************************//**
@@ -434,7 +432,7 @@ static bool nwkRxIndicateFrame(NwkFrame_t *frame)
   ind.dstAddr = header->nwkDstAddr;
   ind.srcEndpoint = header->nwkSrcEndpoint;
   ind.dstEndpoint = header->nwkDstEndpoint;
-  ind.appdata = frame->payload;
+  ind.data = frame->payload;
   ind.size = nwkFramePayloadSize(frame);
   ind.lqi = frame->rx.lqi;
   ind.rssi = frame->rx.rssi;

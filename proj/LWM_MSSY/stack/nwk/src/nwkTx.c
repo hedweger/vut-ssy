@@ -181,7 +181,7 @@ void nwkTxBroadcastFrame(NwkFrame_t *frame)
 *****************************************************************************/
 bool nwkTxAckReceived(NWK_DataInd_t *ind)
 {
-  NwkCommandAck_t *command = (NwkCommandAck_t *)ind->appdata;
+  NwkCommandAck_t *command = (NwkCommandAck_t *)ind->data;
   NwkFrame_t *frame = NULL;
 
   if (sizeof(NwkCommandAck_t) != ind->size)
