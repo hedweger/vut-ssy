@@ -51,7 +51,7 @@
 
 #define UART_SPEED 115200
 #define DESIGNATION 0 // 0 -> server, 1 -> client
-#define APP_ENABLED 1 // 0 -> off, 1 -> on
+#define APP_ENABLE // 0 -> off, 1 -> on
 
 // Address must be set to 0 for the first device, and to 1 for the second one.
 #define APP_ADDR 00

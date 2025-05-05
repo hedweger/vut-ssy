@@ -74,7 +74,7 @@ uint16_t APP_pushAddr(uint8_t endpoint, uint8_t *data) {
 }
 
 bool APP_dataRecv(NWK_DataInd_t *ind) {
-  AppMsg_t *recv = (AppMsg_t *)ind->data;
+  AppMsg_t *recv = (AppMsg_t *)ind->appdata;
 #if DESIGNATION == 1 // client
   switch (msgType) {
   case RELEASE:
@@ -138,7 +138,7 @@ bool APP_dataRecv(NWK_DataInd_t *ind) {
      * one.
      */
     routeTablePtr++;
-    int16_t addr = APP_pushAddr(ind->srcEndpoint, ind->data);
+    int16_t addr = APP_pushAddr(ind->srcEndpoint, ind->appdata);
     APP_dataSend(OFFER, addr);
     break;
   case REQUEST:

@@ -48,7 +48,7 @@
 #define _NWK_RX_H_
 
 /*- Includes ---------------------------------------------------------------*/
-#include "app.h"
+#include "appMsg.h"
 #include "nwkFrame.h"
 #include "sysTypes.h"
 #include <stdint.h>
@@ -71,8 +71,9 @@ typedef struct NWK_DataInd_t {
   uint8_t dstEndpoint;
   uint8_t options;
 #ifdef APP_ENABLE
-  AppMsg_t *data;
-#else
+  AppMsg_t *appdata;
+#endif
+#ifndef APP_ENABLE
   uint8_t *data;
 #endif
   uint8_t size;

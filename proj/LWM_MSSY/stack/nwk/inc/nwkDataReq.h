@@ -48,7 +48,7 @@
 #define _NWK_DATA_REQ_H_
 
 /*- Includes ---------------------------------------------------------------*/
-#include "app.h"
+#include "appMsg.h"
 #include "sysConfig.h"
 #include "sysTypes.h"
 #include <stdbool.h>

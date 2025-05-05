@@ -19,7 +19,7 @@ stack/sys/src/sys.d stack/sys/src/sys.o: ../stack/sys/src/sys.c \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- ../stack/nwk/inc/nwkRx.h ../stack/nwk/inc/nwkFrame.h \
+ ../stack/nwk/inc/nwkRx.h ../appMsg.h ../stack/nwk/inc/nwkFrame.h \
  ../stack/nwk/inc/nwkGroup.h ../stack/nwk/inc/nwkSecurity.h \
  ../stack/nwk/inc/nwkDataReq.h ../stack/hal/atmega256rfr2/inc/hal.h \
  ../stack/sys/inc/sys.h ../stack/sys/inc/sysConfig.h \
@@ -70,6 +70,8 @@ c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmsp
 c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
 ../stack/nwk/inc/nwkRx.h:
+
+../appMsg.h:
 
 ../stack/nwk/inc/nwkFrame.h:
 

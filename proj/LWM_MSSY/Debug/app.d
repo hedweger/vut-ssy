@@ -22,11 +22,11 @@ app.d app.o: .././app.c \
  ../stack/hal/drivers/atmega256rfr2/inc/halUart.h \
  ../stack/sys/inc/sysConfig.h ../stack/sys/inc/../../../config.h \
  ../stack/nwk/inc/nwk.h ../stack/nwk/inc/nwkRoute.h \
- ../stack/nwk/inc/nwkRx.h ../app.h ../stack/nwk/inc/nwkFrame.h \
+ ../stack/nwk/inc/nwkRx.h ../appMsg.h ../stack/nwk/inc/nwkFrame.h \
  ../stack/nwk/inc/nwkGroup.h ../stack/nwk/inc/nwkSecurity.h \
  ../stack/nwk/inc/nwkDataReq.h ../stack/nwk/inc/nwkDataReq.h \
  ../stack/nwk/inc/nwkRx.h ../stack/phy/atmega256rfr2/inc/phy.h \
- ../stack/sys/inc/sysTimer.h
+ ../stack/sys/inc/sysTimer.h .././appMsg.h
 
 c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h:
 
@@ -82,7 +82,7 @@ c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmsp
 
 ../stack/nwk/inc/nwkRx.h:
 
-../app.h:
+../appMsg.h:
 
 ../stack/nwk/inc/nwkFrame.h:
 
@@ -99,3 +99,5 @@ c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmsp
 ../stack/phy/atmega256rfr2/inc/phy.h:
 
 ../stack/sys/inc/sysTimer.h:
+
+.././appMsg.h:

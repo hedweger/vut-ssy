@@ -6,8 +6,8 @@ stack/nwk/src/nwk.d stack/nwk/src/nwk.o: ../stack/nwk/src/nwk.c \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
  ../stack/phy/atmega256rfr2/inc/phy.h ../stack/sys/inc/sysConfig.h \
- ../stack/sys/inc/../../../config.h ../stack/nwk/inc/nwkRx.h \
- ../stack/sys/inc/sysTypes.h \
+ ../stack/sys/inc/../../../config.h ../stack/nwk/inc/nwkRx.h ../appMsg.h \
+ ../stack/nwk/inc/nwkFrame.h ../stack/sys/inc/sysTypes.h \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -20,13 +20,12 @@ stack/nwk/src/nwk.d stack/nwk/src/nwk.o: ../stack/nwk/src/nwk.c \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\wdt.h \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
- ../stack/nwk/inc/nwkFrame.h ../stack/nwk/inc/nwkTx.h \
- ../stack/nwk/inc/nwkRx.h ../stack/nwk/inc/nwkGroup.h \
- ../stack/nwk/inc/nwkFrame.h ../stack/nwk/inc/nwkRoute.h \
- ../stack/nwk/inc/nwkSecurity.h ../stack/nwk/inc/nwkRouteDiscovery.h \
- ../stack/nwk/inc/nwk.h ../stack/nwk/inc/nwkRoute.h \
- ../stack/nwk/inc/nwkGroup.h ../stack/nwk/inc/nwkSecurity.h \
- ../stack/nwk/inc/nwkDataReq.h
+ ../stack/nwk/inc/nwkTx.h ../stack/nwk/inc/nwkRx.h \
+ ../stack/nwk/inc/nwkGroup.h ../stack/nwk/inc/nwkFrame.h \
+ ../stack/nwk/inc/nwkRoute.h ../stack/nwk/inc/nwkSecurity.h \
+ ../stack/nwk/inc/nwkRouteDiscovery.h ../stack/nwk/inc/nwk.h \
+ ../stack/nwk/inc/nwkRoute.h ../stack/nwk/inc/nwkGroup.h \
+ ../stack/nwk/inc/nwkSecurity.h ../stack/nwk/inc/nwkDataReq.h
 
 c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
@@ -47,6 +46,10 @@ c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h:
 ../stack/sys/inc/../../../config.h:
 
 ../stack/nwk/inc/nwkRx.h:
+
+../appMsg.h:
+
+../stack/nwk/inc/nwkFrame.h:
 
 ../stack/sys/inc/sysTypes.h:
 
@@ -73,8 +76,6 @@ c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\wdt.h
 c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
 c:\apps\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
-
-../stack/nwk/inc/nwkFrame.h:
 
 ../stack/nwk/inc/nwkTx.h:
 
