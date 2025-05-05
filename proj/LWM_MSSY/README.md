@@ -1,6 +1,12 @@
 ## MPC-SSY Projekt | 
 
-Tato dokumentace popisuje modul `app` (`app.h` a `app.c`) P2P (peer-to-peer) síťové aplikace. Poskytuje přehled účelu modulu, datových struktur, stavového automatu, API funkcí a detailů implementace.
+### 0. Pro spuštění:
+Pro server:
+* v `config.h` nastavit `DESIGNATION` na 0, `APP_ADDR` na 00 a `APP_ENDPOINT` na libovolnou hodnotu
+Pro klienta:
+* v `config.h` nastavit `DESIGNATION` na 1, `APP_ADDR` na libovolnou hodntu a `APP_ENDPOINT` na libovolnou hodnotu, ale stejnou jako server
+
+Jako první se musí spustit server, následně klient. Pro sledování funkce doporučuji breakpointy ve funkci `APP_dataRecv` na začátku switche pro klienta i server. 
 
 ### 1. Přehled modulu
 
