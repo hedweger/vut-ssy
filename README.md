@@ -1,3 +1,3 @@
 # MPC-SSY (Bezdrátové a senzorové sítě)
-[link](/proj/LWM_MSSY/)
+[projekt zde](/proj/LWM_MSSY/)
 
